@@ -6,6 +6,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://uygexkschxotvt:3c8bd98699a9e4b3b427554edd35bd11a0c3516acbac49017022931df7dd1951@ec2-54-152-185-191.compute-1.amazonaws.com:5432/d1dabng5grsjjg'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+heroku ps:scale web=1
+
 db = SQLAlchemy(app)
 
 class Favquotes(db.Model):
